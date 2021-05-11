@@ -21,8 +21,16 @@
         <span class="icon-bar bottom-bar"></span>
       </button>
       <div class="collapse navbar-collapse text-right" id="navbarNav">
+            {% if page.social %}
+    <div class="social">
+      <div class="contact-icons">
+        {% include social.html %}
+      </div>
+      <div class="contact-note">{{ site.contact_note }}</div>
+    </div>
+    {% endif %}
         <ul class="navbar-nav ml-auto flex-nowrap">
-          <!-- About -->
+          <!-- Abosdfasdfut -->
           <li class="nav-item {% if page.title == 'about' %}active{% endif %}">
             <a class="nav-link" href="{{ '/' | relative_url }}">
               about
@@ -32,7 +40,7 @@
             </a>
           </li>
           {% if site.blog_name %}
-          <!-- Blog -->
+          <!-- Blog sdafasdfsd-->
           <li class="nav-item {% if page.url contains 'blog' %}active{% endif %}">
             <a class="nav-link" href="{{ '/blog/' | relative_url }}">
               blog
@@ -42,8 +50,26 @@
             </a>
           </li>
           {% endif %}
+          <!-- CV -->
+          
+          <li class="nav-item {% if page.title == 'projects' %}active{% endif %}">
+              <a class="nav-link" href="{{ '/projects/' | relative_url }}">
+              projects 
+              <!-- {% if page.title == "blog" %} -->
+              <!-- <span class="sr-only">(current)</span> -->
+              <!-- {% endif %} -->
+            </a>
+          </li>
+          <li class="nav-item {% if page.url contains '.pdf' %}active{% endif %}">
+            <a class="nav-link" href="{{ '/assets/pdf/Resume_Zijiao_Yang.pdf' | relative_url }}">
+              resume 
+              <!-- {% if page.title == "blog" %} -->
+              <!-- <span class="sr-only">(current)</span> -->
+              <!-- {% endif %} -->
+            </a>
+          </li>
           <!-- Other pages -->
-          {% assign sorted_pages = site.pages | sort: "title" %}
+          <!-- {% assign sorted_pages = site.pages | sort: "title" %}
           {% for p in sorted_pages %}
           {% if p.nav and p.autogen == nil %}
           <li class="nav-item {% if page.title == p.title %}active{% endif %}">
@@ -55,7 +81,7 @@
               </a>
           </li>
           {% endif %}
-          {% endfor %}
+          {% endfor %} -->
           {% if site.enable_darkmode %}
             <div class = "toggle-container">
               <a id = "light-toggle">
