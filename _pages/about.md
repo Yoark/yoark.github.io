@@ -6,7 +6,7 @@ description: <a href="https://eecs.oregonstate.edu/undergraduate-programs/comput
 
 profile:
   align: right 
-  image: prof_pic.jpg
+  image: prof_pic.jpeg
   # address: >
     # <p></p>
     # <p>123 your address street</p>
