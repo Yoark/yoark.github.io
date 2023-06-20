@@ -33,6 +33,13 @@ category: research
 </div>
 
 <br>
+<center>
+<div style="width: 800px; height: auto; max-width: 80%;">
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/0bdanHI6I-U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</center>
+
+<br>
 
 <div align="justify" style="margin-top: 15px; color: black;">
   <p>
@@ -90,13 +97,13 @@ implicit (truncation) or explicit (intervention). To provide
 additional comparison with non-stop instructions, we also
 consider a one-step ahead instruction that includes the in-
 struction segment from the terminal node as well (i.e. the
-agent is instructed to make the next step in the trajectory). 
+agent is instructed to make the next step in the trajectory).
 
- We find average stop probability to remain fairly constant for implicit and explicit stop instructions.(Note that longer trajectories have fewer episodes and larger variation.) This suggests agents consistently ground the stop instruction regardless of trajectory length despite biased RxR training trajectory length (<span data-figure-ref="figure2">Figure 2</span>). 
+We find average stop probability to remain fairly constant for implicit and explicit stop instructions.(Note that longer trajectories have fewer episodes and larger variation.) This suggests agents consistently ground the stop instruction regardless of trajectory length despite biased RxR training trajectory length (<span data-figure-ref="figure2">Figure 2</span>).
 We also find stop probability is higher for explicit than implicit stop which are both naturally higher than the one-step ahead setting with 95% confidence. (Check paper for details)
+
   </p>
 
-  
   <div style="text-align: center;" id="figure3">
   <figure style="text-align: center;">
     <img style="width: 800px; max-width: 100%; height: auto;" src="{{site.baseurl}}/assets/img/vln-behave/dir_def.png" alt="direction_definition">
@@ -159,6 +166,7 @@ Using the REVERIE dataset's object annotations, we create intervention episodes 
    In the experiment, agents are given room-seeking instructions to navigate to specific rooms, with 1-hop settings representing visible rooms (<span data-figure-ref="figure6">Figure 6</span>) and k-hop settings representing rooms that may require searching. Using Matterport3D room region annotations, intervention candidates were created for 1-hop and k-hop settings.
 
 For 1-hop results, agents' progress towards target rooms was measured using a distribution over change in geodesic distances to the nearest node with the target room type. The right-shift in the density suggests that agents respond somewhat to the intervention. The effect of intervention on delta geodesic distance was significant, but agents didn't reliably place strong beliefs on neighbors with the target room type. (For n hop results, check paper)
+
   </p>
 
   <div style="text-align: center;" id="figure7">
@@ -174,6 +182,7 @@ For 1-hop results, agents' progress towards target rooms was measured using a di
     In skill-specific interventions, we identify correct actions for various instructions like stopping, turning, object-seeking, and room-seeking. To compare Vision-and-Language Navigation (VLN) models, we calculate the average probability mass placed on these correct actions using a scoring function. This function takes into account the intervention episodes, agent's predicted probability for action, and other factors. Higher scores indicate better certainty in selecting grounded actions.
 
 When comparing three VLN agents with varying performance, (<span data-figure-ref="figure7">Figure 7.</span>) we observe that improved overall task performance also leads to improvements in skill-specific scores. However, these improvements aren't uniform across skills, and agents are more proficient at handling stopping and turning instructions than those related to objects or rooms.
+
   </p>
   
 </div>
