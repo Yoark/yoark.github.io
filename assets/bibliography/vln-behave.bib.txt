@@ -1,7 +1,7 @@
-@article{zijiao2022behave,
-  abbr={CVPR},
+@inproceedings{yang2023behavioral,
   title={Behavioral Analysis of Vision-and-Language Navigation Agents},
   author={Yang, Zijiao and Majumdar, Arjun and Lee, Stefan},
-  journal={Computer Vision and Pattern Recognition},
-  year={2023},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={2574--2582},
+  year={2023}
 }
