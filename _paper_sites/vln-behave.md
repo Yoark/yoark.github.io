@@ -11,7 +11,7 @@ category: research
 # <center style="color: black; font-size: 30px;"> Behavioral Analysis of Vision-and-Language Navigation Agents</center>
 
 <div align="center" style="font-weight: 500; margin-bottom: 10px; font-size: 15px; color: black;" >
-  To appear: CVPR 2023
+  Appeared at CVPR 2023
 </div>
 
 <div align="center" style="color: black;">
