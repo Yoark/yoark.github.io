@@ -32,13 +32,14 @@ jobs:
       run: |
         git config --global user.name "GitHub Action"
         git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        if [[ "${{ github.ref }}" == refs/pull/*/merge ]]; then # pull request
-          echo "SRC_BRANCH=${{ github.head_ref }}" >> $GITHUB_OUTPUT
+        if [[ "${GITHUB_REF}" == refs/pull/*/merge ]]; then # pull request
+          echo "SRC_BRANCH=${GITHUB_HEAD_REF}" >> $GITHUB_OUTPUT
           echo "NO_PUSH=--no-push" >> $GITHUB_OUTPUT
-        elif [[ "${{ github.ref }}" == refs/heads/* ]]; then # branch, e.g. master, source etc
-          echo "SRC_BRANCH=${{ github.ref#refs/heads/ }}" >> $GITHUB_OUTPUT
+        elif [[ "${GITHUB_REF}" == refs/heads/* ]]; then # branch, e.g., master, source, etc.
+          # Remove 'refs/heads/' prefix from GITHUB_REF
+          echo "SRC_BRANCH=${GITHUB_REF#refs/heads/}" >> $GITHUB_OUTPUT
         fi
-        if [[ "${{ github.repository }}" == *.github.io ]]; then # user/org repo
+        if [[ "${GITHUB_REPOSITORY}" == *.github.io ]]; then # user/org repo
           echo "DEPLOY_BRANCH=master" >> $GITHUB_OUTPUT
         else
           echo "DEPLOY_BRANCH=gh-pages" >> $GITHUB_OUTPUT
